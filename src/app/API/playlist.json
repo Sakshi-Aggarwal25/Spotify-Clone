@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Regular",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "id": 201,
+        "userID": 1001
+    },
+    {
+        "name": "Pop",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "id": 201,
+        "userID": 1001
+    },
+    {
+        "name": "Romantic",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "id": 201,
+        "userID": 1001
+    }
+]

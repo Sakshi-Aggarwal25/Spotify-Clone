@@ -1,0 +1,12 @@
+ul {
+    counter-reset: index;  
+    padding: 0;
+    min-width: 400px;
+   margin: 20px;
+   padding: 30px;
+  }
+  #myList{
+      margin: auto;
+      padding: 20px;
+  }
+  

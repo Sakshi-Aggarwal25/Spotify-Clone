@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <!-- <app-test-drag></app-test-drag> -->
+    <app-header></app-header>
+    <!-- <h1>MY ELEMENTS</h1>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button> -->
+    <div class="container-xxl maxlength">
+      <div class="row eql-row">
+        <div class="col-2 p-0 bg-dark">
+          <div class="eql-col">
+            <app-menu (featureSelected)="onNavigate($event)"></app-menu>
+          </div>
+        </div>
+        <div class="col-10 p-0 bg-dark">
+          <div class="eql-col p-0 ">
+            <router-outlet></router-outlet>
+          </div>
+          <!-- <app-choice *ngIf="loadedFeature === 'home'"></app-choice>
+          <app-library *ngIf="loadedFeature === 'create'" ></app-library>
+          <app-search-lib *ngIf="loadedFeature === 'search'"></app-search-lib>  -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

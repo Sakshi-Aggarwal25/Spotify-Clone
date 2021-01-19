@@ -1,0 +1,32 @@
+<!-- <p style="color: white; font-size: x-large">
+  Charts <button class="btn btn-light" id="min">Minimize</button>
+</p> -->
+
+<!-- <div class="row" id="myRow">
+    <div class="col-md-3">
+        <app-item id="one" class="item"></app-item>
+    </div>
+    <div class="col-md-3">
+        <app-item class="item"></app-item>
+    </div>
+    <div class="col-md-3">
+        <app-item class="item"></app-item>
+    </div>
+    <div class="col-md-3">
+        <app-item class="item"></app-item>
+    </div>
+</div> -->
+
+<p style="color: white; font-size: x-large">
+    {{heading}} 
+    <button class="btn btn-light min">^</button>
+</p>
+
+<div class="row myRow" >
+  <div class="col-md-3" *ngFor="let itemData of items" >
+    <app-item 
+        [imagePath]="itemData.imagePath" [desc]="itemData.desc">
+    </app-item>
+  </div>
+  
+</div>

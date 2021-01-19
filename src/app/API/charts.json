@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Top Favourites",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "id": 101
+    }
+]

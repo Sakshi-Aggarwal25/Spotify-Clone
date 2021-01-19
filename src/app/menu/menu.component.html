@@ -1,0 +1,44 @@
+<div class="menu margin-pad">
+  <div class="menu-button">
+    <img class="menu-icon" src="../../assets/Images/home.jpg" />
+    <button class="small-margin-pad" active routerLink="/choice">Home</button>
+  </div>
+  <div class="menu-button">
+    <img class="menu-icon" src="../../assets/Images/search.png" />
+    <button class="small-margin-pad" routerLink="/search-lib">Search</button>
+  </div>
+  <div class="menu-button">
+    <img class="menu-icon" src="../../assets/Images/library.png" />
+    <button class="small-margin-pad" routerLink="/library">Your Library</button>
+  </div>
+<br>
+  <h5 class="small-margin-pad" style="color: aliceblue">PLAYLISTS</h5>
+  <div class="menu-button">
+    <img class="menu-icon" src="../../assets/Images/plus.png" />
+    <button class="small-margin-pad" routerLink="/library">
+      Create Playlist
+    </button>
+  </div>
+  <div class="menu-button" id="dropdown">
+    <!-- <img class="menu-icon" src="../../assets/Images/like.jpg" /> -->
+    <div>
+      <!-- <button class="small-margin-pad">My Playlist</button> -->
+      <ul class="list-group p-2">
+        <li
+          class="list-group-item myClass button"
+          (click)="choosePlaylist(playlist)"
+          style="cursor: pointer; background-color: rgb(237, 231, 231);"
+          *ngFor="let playlist of playlists">
+          {{ playlist.name }}
+        </li>
+      </ul> 
+     </div>
+    <!-- <div class="dropdown-content">
+      Track 1<audio controls>
+        <source src="../../assets/Audio/Soothing-Music.mp3" type="audio/mpeg" />
+      </audio>
+    </div> -->
+  </div>
+  
+  <hr>
+</div>

@@ -1,0 +1,11 @@
+
+  .form-control {
+    box-shadow: 0 5px 5px 0 #c3d6f0;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+  tr{
+    color: white;
+  }
+

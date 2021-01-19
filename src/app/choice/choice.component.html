@@ -1,0 +1,19 @@
+<!-- <div class="bg"> -->
+    <!-- {{ heading[2] }} -->
+    <!-- <app-list class="list" id="first"></app-list>
+    <app-list class="list" id="second"></app-list>
+    <app-list class="list" id="third"></app-list>
+    <app-list class="list"></app-list>
+    <app-list class="list"></app-list>
+</div>
+<p>choice works!</p> -->
+
+
+<ul class="bg" style="padding: 0px;">
+    <li  *ngFor = "let listData of lists">
+        <app-list 
+        [heading]="listData.heading">
+    </app-list>
+        <hr color="white">
+    </li>
+</ul>

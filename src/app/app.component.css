@@ -1,0 +1,32 @@
+
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 668px;
+    min-height: 700px;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+/* body {
+    margin: 0px;
+    height: max-content;
+    min-width: 700px;
+    min-height: 600px;
+} */
+/* * {
+    box-sizing: border-box;
+} */
+
+.eql-row{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.eql-col{
+    overflow: auto;
+    height: 100vh;
+    width: 100%;
+}

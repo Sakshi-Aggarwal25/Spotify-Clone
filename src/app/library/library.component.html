@@ -1,0 +1,31 @@
+<!-- <div class="row">
+    <div class="col-10">
+      <app-library-item></app-library-item>
+      <hr />
+      <ul class="list-group">
+        <a 
+        class="list-group-item" 
+        style="cursor: pointer" >
+      </a>
+      </ul>
+    </div>
+  </div>
+   -->
+
+<div class="row">
+  <div class="col-10 mx-auto">
+    <app-library-item (playlistAdded)="onPlaylistAdded($event)">
+    </app-library-item>
+    <hr />
+    <ul class="list-group mx-auto" style="width: 60%;">
+      <li 
+        class="list-group-item myClass button"
+        (click)=choosePlaylist(playlist)
+        style="cursor: pointer"
+        *ngFor="let playlist of playlists"
+      >
+        {{ playlist.name }}
+    </li>
+    </ul>
+  </div>
+</div>
