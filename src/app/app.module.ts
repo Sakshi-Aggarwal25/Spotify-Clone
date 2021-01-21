@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 // import { AppModule } from './app/app.module';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';

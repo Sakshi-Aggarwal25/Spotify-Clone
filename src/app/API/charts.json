@@ -12,5 +12,20 @@
             }
         ],
         "id": 101
+    },
+    {
+        "name": "Regular",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "id": 101
     }
+
 ]

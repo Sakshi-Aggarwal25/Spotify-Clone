@@ -77,5 +77,43 @@
             }
         ],
         "userID": "1002"
+    },
+    {
+        "name": "Mood Uplifter",
+        "id": "3e4bbe8d-28b0-4368-8bb2-18e916166001",
+        "song": [
+            {
+                "name": "Dil Bechara",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            },
+            {
+                "name": "Jalebi",
+                "id": "10072"
+            }
+        ],
+        "userID": "1082"
+    },
+    {
+        "name": "Bollywood Music",
+        "id": "fd631963-29d6-4fac-9a17-fc380867a6fe",
+        "songs": [
+            {
+                "name": "Dil Bechara",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            },
+            {
+                "name": "Jalebi",
+                "id": "10072"
+            }
+        ],
+        "userID": "1009"
     }
 ]

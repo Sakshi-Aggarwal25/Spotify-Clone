@@ -12,11 +12,11 @@ export class ListComponent implements OnInit {
 
   @Input() heading: string;
   constructor() { 
-    this.items = [];
-    this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My first song"});
-    this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My sec song"});
-    this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My third song"});
-    this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My fourth song"});
+    // this.items = [];
+    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My first song"});
+    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My sec song"});
+    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My third song"});
+    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My fourth song"});
   }
 
   ngOnInit(): void {
