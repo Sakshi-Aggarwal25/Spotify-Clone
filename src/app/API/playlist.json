@@ -1,35 +1,5 @@
 [
     {
-        "name": "Regular",
-        "songs": [
-            {
-                "name": "Mirrors",
-                "id": "1001"
-            },
-            {
-                "name": "Rhythm",
-                "id": "1002"
-            }
-        ],
-        "id": 201,
-        "userID": 1001
-    },
-    {
-        "name": "Pop",
-        "songs": [
-            {
-                "name": "Mirrors",
-                "id": "1001"
-            },
-            {
-                "name": "Rhythm",
-                "id": "1002"
-            }
-        ],
-        "id": 201,
-        "userID": 1001
-    },
-    {
         "name": "Romantic",
         "songs": [
             {
@@ -41,7 +11,71 @@
                 "id": "1002"
             }
         ],
-        "id": 201,
-        "userID": 1001
+        "id": "203",
+        "userID": "1003"
+    },
+    {
+        "name": "blah",
+        "id": "b987fc6a-6d49-4ad4-b5c1-2c9c177e0005",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "userID": "1234"
+    },
+    {
+        "name": "Rock Music",
+        "id": "e6d53a80-d2ad-4b35-babf-3bee93f25730",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "userID": "1004"
+    },
+    {
+        "name": "Sad Songs",
+        "id": "392846fb-808d-412b-8558-10821ab97f2a",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            }
+        ],
+        "userID": "1009"
+    },
+    {
+        "name": "Pop Music",
+        "id": "202",
+        "songs": [
+            {
+                "name": "Mirrors",
+                "id": "1001"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002"
+            },
+            {
+                "name": "Sorry",
+                "id": "10072"
+            }
+        ],
+        "userID": "1002"
     }
 ]
