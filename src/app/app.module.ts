@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-// import { AppModule } from './app/app.module';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -12,7 +10,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 // import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { ChoiceComponent } from './choice/choice.component';
@@ -53,7 +52,7 @@ import { UserCheckGuard } from './user-check.guard';
   ],
   imports: [
     // AppRoutingModule,
-    
+
     BrowserModule,
     Ng2SearchPipeModule,
     FormsModule,

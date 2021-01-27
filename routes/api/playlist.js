@@ -12,8 +12,9 @@ router.get("/", (req, res) => {
       if (err) {
         console.log(err);
       }
+      
       const pl = JSON.parse(data);
-      const p = pl.filter((d) => d.userID === "1009");
+      const p = pl.filter((d) => d.userID === "1002");
       res.send(p);
     });
   });
@@ -56,13 +57,16 @@ router.get("/", (req, res) => {
         console.log(err);
       }
       var lists = JSON.parse(data);
+      console.log("Adding to playlist");
       lists.push(newPlaylist);
       fs.writeFile(playlist, JSON.stringify(lists), (err) => {
         if (err) {
           console.log(err);
         }
-        res.redirect("/");
+        
+        
       });
+      res.redirect("/");
     });
   });
   

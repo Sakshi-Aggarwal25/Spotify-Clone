@@ -10,6 +10,7 @@ import {
 declare var $: any;
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { SonglistService } from 'src/app/songlist.service';
 @Component({
   selector: 'app-library-item-detail',
   templateUrl: './library-item-detail.component.html',
@@ -36,16 +37,14 @@ export class LibraryItemDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private modalService: NgbModal,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    public songlistService: SonglistService
 
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
     this.items = [];
-    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My first song"});
-
-
     this.form = this.fb.group({
       checkArray: this.fb.array([]),
       temp: this.fb.array([]),
@@ -53,10 +52,20 @@ export class LibraryItemDetailComponent implements OnInit {
   }
 
   public playlistName;
-  
+  songs: any[];
   ngOnInit(): void {
     let name = this.route.snapshot.paramMap.get('name');
     this.playlistName = name;
+
+    this.songlistService.getSongList().subscribe(
+      response => {
+        console.log("Song List", response);
+        this.songs = response;
+        console.log(this.songs);
+      }, error => {
+
+      }
+    );
   }
 
 

@@ -13,9 +13,6 @@ declare var $:any;
 export class ChoiceComponent implements OnInit {
   lists: any[];
   obj = [];
-
-
-
   // list: ListComponent;
   // heading = {
   //   name : "Top"
@@ -38,14 +35,9 @@ export class ChoiceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // $(".list").animate({
-    //   opacity: '0.7',
-    //   height: '1.1rem'
-    // });
     this.chartsService.getCharts().subscribe(
       response => {
         console.log("hey", response);
-        // this.lists.push({ heading:"Top Favourites"});
         this.lists = response;
         this.obj = response.name;
       }, error => {

@@ -5,7 +5,7 @@ import { User } from './sign-up/user';
   providedIn: 'root'
 })
 export class EnrollmentService {
-  url = '';
+  url = 'http://localhost:3001/signup';
 
   constructor(private _http: HttpClient) { }
 

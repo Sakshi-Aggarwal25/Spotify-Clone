@@ -1,53 +1,81 @@
 <div class="container-fluid">
   <div class="py-5 text-center mx-auto">
-    <!-- <img
-      class="d-block mx-auto mb-4"
-      src="../../assets/Images/src.png"
-      alt
-      width="142"
-      height="70"
-    /> -->
     <h1 class="py-1 mx-auto">Signup Form</h1>
   </div>
-  <form #userForm="ngForm" novalidate class="mx-auto myWidth ">
+  <form #userForm="ngForm" novalidate class="mx-auto myWidth">
     <!-- {{userForm.value | json}}
     <hr/>
     {{ userModel | json}} -->
-    <div class="form-group mx-auto ">
-        <label>Name</label>
-        <input type="text" class="form-control is-invalid " #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required name="userName" [(ngModel)]="userModel.name">
-        <small  class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
-    </div>
-    <!-- {{name.className}} -->
     <div class="form-group mx-auto">
-        <label>Email</label>
-        <input type="email" class="form-control " name="email" [(ngModel)]="userModel.email">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control is-invalid"
+        #name="ngModel"
+        [class.is-invalid]="name.invalid && name.touched"
+        required
+        name="userName"
+        [(ngModel)]="userModel.name"
+      />
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched"
+        >Name is required</small
+      >
+    </div>
+    <div class="form-group mx-auto">
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="userModel.email"
+      />
     </div>
 
     <div class="form-group">
-        <label>Phone</label>
-        <input type="tel" [class.is-invalid]="phone.invalid && phone.touched" required class="form-control " pattern="^\d{10}$" name="phone" #phone="ngModel" [(ngModel)]="userModel.phone">
-        <!-- <small [class.d-none]="phone.valid || phone.untouched">Phone Number must be 10 digits</small> -->
-        <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
-          <small  class="text-danger" *ngIf="phone.errors.required">Phone Number is required</small>
-          <small  class="text-danger" *ngIf="phone.errors.pattern">Phone Number must be 10 digits</small>
-        </div>
+      <label>Phone</label>
+      <input
+        type="tel"
+        [class.is-invalid]="phone.invalid && phone.touched"
+        required
+        class="form-control"
+        pattern="^\d{10}$"
+        name="phone"
+        #phone="ngModel"
+        [(ngModel)]="userModel.phone"
+      />
+      <!-- <small [class.d-none]="phone.valid || phone.untouched">Phone Number must be 10 digits</small> -->
+      <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+        <small class="text-danger" *ngIf="phone.errors.required"
+          >Phone Number is required</small
+        >
+        <small class="text-danger" *ngIf="phone.errors.pattern"
+          >Phone Number must be 10 digits</small
+        >
+      </div>
     </div>
 
     <div class="form-group">
       <label>Password</label>
       <input
-        required
-        formControlName="password"
         type="password"
+        [class.is-invalid]="password.invalid && password.touched"
+        required
         class="form-control"
+        name="password"
+        #password="ngModel"
+        [(ngModel)]="userModel.password"
       />
+      <div *ngIf="password.errors && (password.invalid || password.touched)">
+        <small class="text-danger" *ngIf="password.errors.required"
+          >Password is required</small
+        >
+      </div>
     </div>
 
     <div class="form-group">
       <label>Confirm Password</label>
       <input
-      required
+        required
         [class.is-invalid]="userForm.errors?.misMatch"
         formControlName="confirmPassword"
         type="password"
@@ -59,15 +87,7 @@
       >
     </div>
 
-    <div class="form-group">
-        <select class="custom-select" required #topic="ngModel" [class.is-invalid]="topic.invalid && topic.touched" required name="topic" [(ngModel)]="userModel.topic">
-            <option value="" selected> I am interested in</option>
-            <option *ngFor="let topic of topics">{{topic}}</option>
-        </select>
-        <small  class="text-danger" [class.d-none]="topic.valid || topic.untouched">Please choose a theme</small>
-    </div>
-
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label>Membership Preference</label>
       <div class="form-check">
         <input type="radio" class="form-check-input" name="membershipPreferance" [(ngModel)]="userModel.membershipPreferance" value="regular">
@@ -77,9 +97,16 @@
         <input type="radio" class="form-check-input" name="membershipPreferance" [(ngModel)]="userModel.membershipPreferance" value="premium">
         <label class="form-check-label">Premium</label>
       </div>
+    </div> -->
 
-    </div>
-    
-    <button [disabled]="userForm.form.invalid" type="submit" class="btn btn-primary"  (click)=load()>Submit form</button>
+    <button
+      [disabled]="userForm.form.invalid"
+      type="submit"
+      class="btn btn-primary"
+      routerLink="/login"
+      (click)="load()"
+    >
+      Submit form
+    </button>
   </form>
 </div>

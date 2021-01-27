@@ -1,26 +1,68 @@
 [
     {
-        "songs": [
-            {
-                "name": "Mirrors",
-                "id": "1001"
-            },
-            {
-                "name": "Rhythm",
-                "id": "1002"
-            },
-            {
-                "name": "Maps",
-                "id": "1003"
-            },
-            {
-                "name": "Story of my Life",
-                "id": "1004"
-            },
-            {
-                "name": "Thunder",
-                "id": "1005"
-            }
-        ]
+        "name": "Mirrors",
+        "id": "1001",
+        "sno": "1",
+        "musician": "Justin Timberlake"
+    },
+    {
+        "name": "Low",
+        "id": "1001",
+        "sno": "2",
+        "musician": "Akon"
+    },
+    {
+        "name": "Hero",
+        "id": "1001",
+        "sno": "3",
+        "musician": "Enrique"
+    },
+    {
+        "name": "Levitating",
+        "id": "1001",
+        "sno": "4",
+        "musician": "Dua Lipa"
+    },
+    {
+        "name": "Roar",
+        "id": "1001",
+        "sno": "5",
+        "musician": "Katy Perry"
+    },
+    {
+        "name": "Lean On",
+        "id": "1001",
+        "sno": "6",
+        "musician": "Major LAzer"
+    },
+    {
+        "name": "Sugar",
+        "id": "1001",
+        "sno": "7",
+        "musician": "Maroon 5"
+    },
+    {
+        "name": "Uptown Funk",
+        "id": "1001",
+        "sno": "8",
+        "musician": "Bruno Mars"
+    },
+    {
+        "name": "Sorry",
+        "id": "1001",
+        "sno": "9",
+        "musician": "Justin Bieber"
+    },
+    {
+        "name": "Hello",
+        "id": "1001",
+        "sno": "10",
+        "musician": "Adele"
+    },
+    {
+        "name": "See You Again",
+        "id": "1001",
+        "sno": "11",
+        "musician": "CHarlie Puth"
     }
 ]

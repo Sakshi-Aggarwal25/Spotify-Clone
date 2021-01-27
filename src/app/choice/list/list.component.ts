@@ -37,15 +37,9 @@ export class ListComponent implements OnInit {
 
 
     $(".min").click(function(event){
-
+      // event.stopPropagation();
+      event.stopImmediatePropagation()
       $(event.target.parentElement.nextElementSibling).toggle();
-      // if($(event.target).text() === '^'){
-      //   $(event.target).html('-');
-      // }
-    //   $(event.target).html(function(text){
-    //     return text === "^" ? "-" : "^";
-    // })
-      // $("app-item").toggle();
       const x = event.target;
       if (x.innerHTML === "^") {
         x.innerHTML = "-";

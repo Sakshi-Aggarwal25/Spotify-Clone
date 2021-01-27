@@ -24,8 +24,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let song of songs | filter: searchText">
-          <td >{{ song.id }}</td>
-          <td appTransform>{{ song.name }}</td>
+          <td >{{ song.sno }}</td>
+          <td appTransform>{{song.name}}</td>
           <td >{{ song.musician }}</td>
         </tr>
       </tbody>

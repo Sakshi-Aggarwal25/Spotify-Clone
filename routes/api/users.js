@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const uuid = require("uuid");
 const fs = require("fs");
+const session = require("express-session");
 
 const registeredUsers = "./src/app/API/registeredUsers.json";
 
@@ -46,23 +47,33 @@ router.post("/signup", (req, res) => {
   
   //Login
   router.get("/login", (req, res) => {
-    console.log("Checking Users");
-    fs.readFile(registeredUsers, "utf8", (err, data) => {
-      if (err) {
-        console.log(err);
-      }
-      let id = req.body.id;
-      let pass = req.body.password;
-      let users = JSON.parse(data);
-      const found = users.some((user) => user.id === id && user.password == pass);
-      if (found) {
-        const user = users.filter((user) => user.id === id && user.password == pass);
-        res.json(user);
-      } else {
-        res.status(400).json({ msg: `User not found with ID = ${id} and password = ${pass}` });
-      }
-    });
+    try{
+      console.log("Checking Users");
+      fs.readFile(registeredUsers, "utf8", (err, data) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log("queries" + JSON.stringify(req.query));
+        let id = req.query.name;
+        let pass = req.query.password;
+        let users = JSON.parse(data);
+        const found = users.some((user) => user.name === id && user.password == pass);
+        console.log("59", found);
+        if (found) {
+          console.log("found");
+          const user = users.filter((user) => user.name === id && user.password == pass);
+          // req.session.name = user.name;
+          // req.session.userID = user.userID;
+          res.json(user);
+        } else {
+          res.status(400).json({ msg: `User not found with name = ${id} and password = ${pass}` });
+        }
+      });
+    }
+    catch(err){
+      console.loh(err);
+    }
+    
   });
-
 
   module.exports = router;

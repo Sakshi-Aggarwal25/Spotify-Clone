@@ -12,7 +12,8 @@
 <ul class="bg" style="padding: 0px;">
     <li  *ngFor = "let listData of lists">
         <app-list 
-        [heading]="listData.name">
+        [heading]="listData.name"
+        [items]="listData.songs">
     </app-list>
         <hr color="white">
     </li>

@@ -36,11 +36,11 @@
           </div>
           -->
     <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
-      <div *ngFor="let data of Data; let i = index">
+      <div *ngFor="let data of songs; let i = index">
         <label>
           <input
             type="checkbox"
-            [value]="data.value"
+            [value]="data.name"
             (change)="onCheckboxChange($event)"
             (click)="toggletick($event)"
           />
@@ -57,7 +57,6 @@
     </form>
   </div>
   <div class="modal-footer">
-    <!-- <button type="button" class="btn btn-outline-dark">Save</button> -->
   </div>
 </ng-template>
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ChartService {
 
-  constructor(public httpClient: HttpClient ) { }
+  constructor( public httpClient: HttpClient ) { }
 
   getCharts(): Observable<any>{
     // var a = this.httpClient.get('http://localhost:3001/charts'); 

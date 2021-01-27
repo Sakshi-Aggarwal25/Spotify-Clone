@@ -7,7 +7,7 @@ declare var $:any;
 })
 export class ItemComponent implements OnInit {
   
-  @Input() imagePath : string;
+  @Input() imagePath : "../assets/Images/image.jpg";
   @Input() desc : string;
   constructor() { }
 
