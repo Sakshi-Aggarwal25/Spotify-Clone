@@ -60,10 +60,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.userdataService.setUser(this.myUser.value);
-    $('#signup').hide();
-    $('#login').hide();
-    $('#user').show();
+    // this.userdataService.setUser(this.myUser.value);
+    // $('#signup').hide();
+    // $('#login').hide();
+    // $('#user').show();
   }
 
   ngOnInit(): void {

@@ -12,7 +12,7 @@ const charts = "./src/app/API/charts.json";
 router.get("/", (req, res) => {
   // const {userID} = req.session;
   console.log("user " + req.user);
-  console.log("Auth " +req.isAuthenticated())
+  // console.log("Auth " +req.isAuthenticated())
   console.log("Reading Charts");
   fs.readFile(charts, "utf8", (err, data) => {
     if (err) {

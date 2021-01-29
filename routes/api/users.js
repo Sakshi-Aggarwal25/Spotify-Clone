@@ -47,77 +47,97 @@ router.post("/signup", (req, res) => {
         .json({ msg: `User with the email ${newUser.email} already exists` });
     } else {
       users.push(newUser);
-      console.log("84 " + newUser.id);
-        const user_id = newUser.id;
-        req.login(user_id , function(err) {
-          res.redirect('/');
-        })
       fs.writeFile(registeredUsers, JSON.stringify(users), (err) => {
         if (err) {
           console.log(err);
         }
-        // res.redirect("/");
+        res.redirect("/");
       });
-      
     }
   });
 });
 
+
+// --------------------------------------------------
+
+const auth = () => {
+  return (req, res, next) => {
+      passport.authenticate('local', (error, user, info) => {
+          if(error) res.status(400).json({"statusCode" : 200 ,"message" : error});
+          req.login(user, function(error) {
+              if (error) return next(error);
+              next();
+          });
+      })(req, res, next);
+  }
+}
+
+// --------------------------------------------------
+
 //Login
-router.get("/login", (req, res) => {
+router.get("/login" , (req, res) => {
   try {
     console.log("Checking Users");
     fs.readFile(registeredUsers, "utf8", (err, data) => {
       if (err) {
         console.log(err);
       }
-      console.log("queries " + JSON.stringify(req.query));
+      console.log("queries" + JSON.stringify(req.query));
       let id = req.query.name;
       let pass = req.query.password;
       let users = JSON.parse(data);
       const found = users.some(
         (user) => user.name === id && user.password == pass
       );
-      console.log("59", found);
-      console.log(JSON.stringify(req.session));
+      // console.log("59", found);
       if (found) {
         console.log("found");
         const user = users.filter(
           (user) => user.name === id && user.password == pass
         );
+        req.login(user[0], function (err) {
+          if (err) {
+            return next(err);
+          }
+          console.log("sesson: " + req.session);
+          console.log("user Id" + req.session.passport.user);
+        // return res.redirect('/playlist/' + req.session.passport.user);
 
+          // console.log("user " + req.user.name);
+          // console.log("Auth " + req.isAuthenticated());
 
-        console.log("84 " + user[0].id);
-        const user_id = user[0].id;
-        req.login(user_id , function(err) {
-          res.json(user);
-        })
+          // passport.authenticate("local", {
+          //   successRedirect: "/",
+          //   failureRedirect: "/login",
+          //   failureFlash: "Invalid username or password.",
+          // })
 
-
-        // req.session.user = user;
-        // console.log("session" + req.session.user);
-        // console.log(JSON.stringify(req.session));
-        // res.json(user);
+          return res.json(user);
+        });
       } else {
-        console.log("session" + req.session.user);
-        res
-          .status(400)
-          .json({
-            msg: `User not found with name = ${id} and password = ${pass}`,
-          });
+        res.status(400).json({
+          msg: `User not found with name = ${id} and password = ${pass}`,
+        });
       }
     });
   } catch (err) {
-    console.loh(err);
+    console.log(err);
   }
 });
 
-passport.serializeUser(function(user_id , done) {
-  done(null, user_id) ;
-});
+// router.post("/login", passport.authenticate("local"), function (req, res) {
+//   // If this function gets called, authentication was successful.
+//   console.log("Post Login");
+//   res.redirect("http://localhost:3001//playlist/" + req.user.id);
+// });
 
-passport.deserializeUser(function(user_id , done) {
-    done(null, user_id );
-});
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: "Invalid username or password.",
+  })
+);
 
 module.exports = router;

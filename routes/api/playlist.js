@@ -3,10 +3,18 @@ const router = express.Router();
 const uuid = require("uuid");
 const fs = require("fs");
 
+var session = require("express-session");
+var passport = require("passport");
+
 const playlist = "./src/app/API/playlist.json";
+var isLoggedIn = require("./authentication");
 
 //Get playlists of a given user --> will have to pass userID
-router.get("/", (req, res) => {
+router.get("/",isLoggedIn, (req, res) => {
+    // const id = req.params.id;
+    console.log("sesson: " + req.session);
+          console.log("user Id" + req.session.passport.user);
+
     console.log("Reading playlists");
     fs.readFile(playlist, "utf8", (err, data) => {
       if (err) {
@@ -14,7 +22,7 @@ router.get("/", (req, res) => {
       }
       
       const pl = JSON.parse(data);
-      const p = pl.filter((d) => d.userID === "1002");
+      const p = pl.filter((d) => d.userID === "1009");
       res.send(p);
     });
   });
