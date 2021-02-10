@@ -1,21 +1,15 @@
-<h1 style="color: lightgrey;">My playlist "{{ playlistName }}" consists of:</h1>
+<h1 style="color: lightgrey;">{{ playlistName }}</h1>
+
 <hr color="white">
-
-<!-- <div id="myList">
-  <ul>
-  </ul>
-</div> -->
-
-<!-- <app-list></app-list> -->
+<!-- <button (click)="showSongs()">click</button> -->
 <div class="row myRow" >
-    <div class="col-md-3" *ngFor="let itemData of items" >
+    <div class="col-md-2" *ngFor="let itemData of items" >
       <app-item 
-          [imagePath]="itemData.imagePath" [desc]="itemData.desc">
+          [imagePath]="itemData.imagePath" [desc]="itemData.name">
       </app-item>
       <hr>
     </div>
-    
-  </div>
+</div>
 
 <ng-template #content let-modal>
   <div class="modal-header">
@@ -30,30 +24,28 @@
     </button>
   </div>
   <div class="modal-body">
-    <!-- <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label"  for="flexSwitchCheckDefault">1.Roar</label>
-          </div>
-          -->
-    <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
-      <div *ngFor="let data of songs; let i = index">
-        <label>
+    <form id="my-form" [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+      <div *ngFor="let data of songs; let i = index" >
+        <label >
           <input
             type="checkbox"
             [value]="data.name"
-            (change)="onCheckboxChange($event)"
             (click)="toggletick($event)"
+            
+            [checked] = "isPresent(data.name)"
           />
           {{ data.name }}
+          <!-- [ngClass]="{'checked': isPresent(data.name) === true}" -->
+          <!-- *ngIf="{checked: 'isPresent(data.name) === false'}" -->
         </label>
       </div>
       <p
         class="error"
         *ngIf="this.form.controls['checkArray'].errors?.required"
       >
-        Checkbox is required, select atleast one value.
+        Select atleast one song.
       </p>
-      <input class="btn btn-outline-dark" type="submit" value="Add Songs" (click)="modal.dismiss('Cross click')"/> 
+      <input class="btn btn-outline-dark" type="submit" value="Update Songs" (click)="modal.dismiss('Cross click')" (click)="showSongs()"/> 
     </form>
   </div>
   <div class="modal-footer">
@@ -70,4 +62,3 @@
 
 <hr />
 
-<!-- <pre>{{ closeResult }}</pre> -->

@@ -1,44 +1,38 @@
 <div class="menu margin-pad">
   <div class="menu-button">
-    <img class="menu-icon" src="../../assets/Images/home.jpg" />
+    <img class="menu-icon" src="../../assets/Images/home.png" />
     <button class="small-margin-pad" active routerLink="/choice">Home</button>
   </div>
   <div class="menu-button">
-    <img class="menu-icon" src="../../assets/Images/search.png" />
+    <img class="menu-icon" src="../../assets/Images/searchh.png" />
     <button class="small-margin-pad" routerLink="/search-lib">Search</button>
   </div>
   <div class="menu-button">
-    <img class="menu-icon" src="../../assets/Images/library.png" />
+    <img class="menu-icon" src="../../assets/Images/libraryy.png" />
     <button class="small-margin-pad" routerLink="/library">Your Library</button>
   </div>
-<br>
+  <br />
   <h5 class="small-margin-pad" style="color: aliceblue">PLAYLISTS</h5>
   <div class="menu-button">
-    <img class="menu-icon" src="../../assets/Images/plus.png" />
+    <img class="menu-icon" src="../../assets/Images/pluss.png" />
     <button class="small-margin-pad" routerLink="/library">
       Create Playlist
     </button>
   </div>
   <div class="menu-button" id="dropdown">
-    <!-- <img class="menu-icon" src="../../assets/Images/like.jpg" /> -->
-    <div>
-      <!-- <button class="small-margin-pad">My Playlist</button> -->
+    <div class="w-100">
       <ul class="list-group p-2">
         <li
-          class="list-group-item myClass button"
+          class="list-group-item button"
           (click)="choosePlaylist(playlist)"
-          style="cursor: pointer; background-color: rgb(237, 231, 231);"
-          *ngFor="let playlist of playlists">
+          style="cursor: pointer; background-color: rgb(237, 231, 231)"
+          *ngFor="let playlist of playlistService.playlists"
+        >
           {{ playlist.name }}
         </li>
-      </ul> 
-     </div>
-    <!-- <div class="dropdown-content">
-      Track 1<audio controls>
-        <source src="../../assets/Audio/Soothing-Music.mp3" type="audio/mpeg" />
-      </audio>
-    </div> -->
+      </ul>
+    </div>
   </div>
-  
-  <hr>
+
+  <hr />
 </div>

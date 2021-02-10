@@ -22,9 +22,7 @@ import { ListComponent } from './choice/list/list.component';
 import { ItemComponent } from './choice/list/item/item.component';
 import { SearchLibComponent } from './search-lib/search-lib.component';
 import { TransformDirective } from './transform.directive';
-import { TestDragComponent } from './test-drag/test-drag.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LibraryItemDetailComponent } from './library/library-item-detail/library-item-detail.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
@@ -42,17 +40,12 @@ import { UserCheckGuard } from './user-check.guard';
     LibraryItemComponent,
     SearchLibComponent,
     TransformDirective,
-    TestDragComponent,
     NotFoundComponent,
-    DashboardComponent,
     LibraryItemDetailComponent,
     SignUpComponent,
-    LoginComponent,
-    
+    LoginComponent
   ],
   imports: [
-    // AppRoutingModule,
-
     BrowserModule,
     Ng2SearchPipeModule,
     FormsModule,
@@ -64,7 +57,6 @@ import { UserCheckGuard } from './user-check.guard';
     RouterModule.forRoot([
       { path: '', redirectTo: '/choice', pathMatch: 'full' },
       { path: 'library', component: LibraryComponent },
-      { path: 'sign-up', component: SignUpComponent},
       { path: 'admin', component: ChoiceComponent, canActivate: [UserCheckGuard]},
       { path: 'choice', component: ChoiceComponent},
       { path: 'search-lib' , component: SearchLibComponent},

@@ -1,7 +1,5 @@
 import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import {
-  FormControl,
-  FormGroup,
   FormBuilder,
   Validators,
 } from '@angular/forms';
@@ -59,11 +57,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         console.log(error);
       }
     );
-
-    // this.userdataService.setUser(this.myUser.value);
-    // $('#signup').hide();
-    // $('#login').hide();
-    // $('#user').show();
   }
 
   ngOnInit(): void {

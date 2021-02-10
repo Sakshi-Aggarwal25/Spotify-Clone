@@ -1,31 +1,64 @@
-<!-- <div class="row">
-    <div class="col-10">
-      <app-library-item></app-library-item>
-      <hr />
-      <ul class="list-group">
-        <a 
-        class="list-group-item" 
-        style="cursor: pointer" >
-      </a>
-      </ul>
-    </div>
-  </div>
-   -->
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 <div class="row">
-  <div class="col-10 mx-auto">
-    <app-library-item (playlistAdded)="onPlaylistAdded($event)">
-    </app-library-item>
+  <div class="col-10 mx-auto d-flex flex-column">
+    <div class="container">
+      <div class="row py-4">
+        <div class="col-12 p-0">
+          <form>
+            <div class="row">
+              <div class="col mx-auto">
+                <button class="btn" (click)="open(content)">
+                  <i class="fa fa-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <hr />
-    <ul class="list-group mx-auto" style="width: 60%;">
-      <li 
+    <ul class="list-group mx-auto" style="width: 100%">
+      <li
         class="list-group-item myClass button"
-        (click)=choosePlaylist(playlist)
+        (click)="choosePlaylist(playlist)"
         style="cursor: pointer"
-        *ngFor="let playlist of playlists"
+        *ngFor="let playlist of playlistService.playlists"
       >
         {{ playlist.name }}
-    </li>
+      </li>
     </ul>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Playlist to be added</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="col-sm-12 form-group" id="playlistToBeAdded">
+      <label for="name" style="color: black">Name of the Playlist</label>
+      <input type="text" id="name" #nameInput class="form-control" />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="onAddItem()"
+      (click)="modal.dismiss('Cross click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>

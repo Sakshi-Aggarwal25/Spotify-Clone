@@ -1,6 +1,6 @@
 <!-- <div class="bg"> -->
-    <!-- {{ heading[2] }} -->
-    <!-- <app-list class="list" id="first"></app-list>
+<!-- {{ heading[2] }} -->
+<!-- <app-list class="list" id="first"></app-list>
     <app-list class="list" id="second"></app-list>
     <app-list class="list" id="third"></app-list>
     <app-list class="list"></app-list>
@@ -8,13 +8,28 @@
 </div>
 <p>choice works!</p> -->
 
+<!-- <body>
 
-<ul class="bg" style="padding: 0px;">
-    <li  *ngFor = "let listData of lists">
-        <app-list 
-        [heading]="listData.name"
-        [items]="listData.songs">
-    </app-list>
-        <hr color="white">
-    </li>
+    <div class="menu-wrapper">
+        <ul class="menu">
+            <li class="item">1</li>
+        </ul>
+    
+        <div class="paddles">
+            <button class="left-paddle paddle hidden">
+                <
+            </button>
+            <button class="right-paddle paddle">
+                >
+            </button>
+        </div>
+    </div>
+</body> -->
+
+
+<ul class="bg myUL">
+  <li *ngFor="let listData of lists">
+    <app-list [heading]="listData.name" [items]="listData.songs"> </app-list>
+    <hr color="white" />
+  </li>
 </ul>

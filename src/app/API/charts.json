@@ -4,41 +4,61 @@
         "songs": [
             {
                 "name": "Red",
-                "id": "1001"
+                "id": "1001",
+                "songPath" : "../../assets/Audio/1.mp3"
             },
             {
                 "name": "Scientist",
-                "id": "1002"
+                "id": "1002",
+                "songPath" : "../../assets/Audio/2.mp3"
             },
             {
                 "name": "Animals",
-                "id": "1001"
+                "id": "1001",
+                "songPath" : "../../assets/Audio/3.mp3"
             },
             {
                 "name": "Play Date",
-                "id": "1002"
+                "id": "1002",
+                "songPath" : "../../assets/Audio/4.mp3"
+            },
+            {
+                "name": "kho gaye",
+                "id": "1005",
+                "songPath" : "../../assets/Audio/5.mp3"
             }
+            
         ],
         "id": 101
     },
     {
         "name": "Regular",
         "songs": [
+            
             {
-                "name": "Mirrors",
-                "id": "1001"
+                "name": "Scientist",
+                "id": "1002",
+                "songPath" : "../../assets/Audio/6.mp3"
+            },
+            {
+                "name": "Animals",
+                "id": "1001",
+                "songPath" : "../../assets/Audio/7.mp3"
             },
             {
                 "name": "Rhythm",
-                "id": "1002"
+                "id": "1002",
+                "songPath" : "../../assets/Audio/8.mp3"
             },
             {
                 "name": "Divine",
-                "id": "1001"
+                "id": "1001",
+                "songPath" : "../../assets/Audio/9.mp3"
             },
             {
                 "name": "Kasoor",
-                "id": "1002"
+                "id": "1002",
+                "songPath" : "../../assets/Audio/10.mp3"
             }
         ],
         "id": 101
@@ -47,20 +67,29 @@
         "name": "Top Charts",
         "songs": [
             {
-                "name": "Mirrors",
-                "id": "1001"
-            },
-            {
-                "name": "Rhythm",
-                "id": "1002"
+                "name": "Scientist",
+                "id": "1002",
+                "songPath" : "../../assets/Audio/11.mp3"
             },
             {
                 "name": "Animals",
-                "id": "1001"
+                "id": "1001",
+                "songPath" : "../../assets/Audio/12.mp3"
+            },
+            {
+                "name": "Mirrors",
+                "id": "1001",
+                "songPath" : "../../assets/Audio/1.mp3"
+            },
+            {
+                "name": "Rhythm",
+                "id": "1002",
+                "songPath" : "../../assets/Audio/2.mp3"
             },
             {
                 "name": "Play Date",
-                "id": "1002"
+                "id": "1002",
+                "songPath" : "../../assets/Audio/3.mp3"
             }
         ],
         "id": 101
@@ -70,19 +99,28 @@
         "songs": [
             {
                 "name": "Lover",
-                "id": "1001"
+                "id": "1001",
+                "songPath" : "../../assets/Audio/4.mp3"
+            },
+            {
+                "name": "Red",
+                "id": "1001",
+                "songPath" : "../../assets/Audio/5.mp3"
             },
             {
                 "name": "Rhythm",
-                "id": "1002"
+                "id": "1002",
+                "songPath" : "../../assets/Audio/6.mp3"
             },
             {
                 "name": "Divine",
-                "id": "1001"
+                "id": "1001",
+                "songPath" : "../../assets/Audio/7.mp3"
             },
             {
                 "name": "Kasoor",
-                "id": "1002"
+                "id": "1002",
+                "songPath" : "../../assets/Audio/8.mp3"
             }
         ],
         "id": 101

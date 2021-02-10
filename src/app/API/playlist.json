@@ -60,25 +60,6 @@
         "userID": "1009"
     },
     {
-        "name": "Pop Music",
-        "id": "202",
-        "songs": [
-            {
-                "name": "Mirrors",
-                "id": "1001"
-            },
-            {
-                "name": "Rhythm",
-                "id": "1002"
-            },
-            {
-                "name": "Sorry",
-                "id": "10072"
-            }
-        ],
-        "userID": "1002"
-    },
-    {
         "name": "Mood Uplifter",
         "id": "3e4bbe8d-28b0-4368-8bb2-18e916166001",
         "song": [
@@ -117,20 +98,33 @@
         "userID": "1009"
     },
     {
-        "name": "Test",
-        "id": "24618011-a047-44ff-ad30-679ff5721f5e",
-        "song": [
+        "name": "Pop Music",
+        "id": "700da05f-a0fd-4757-b8e9-8cb6ea8f0a9d",
+        "songs": [
             {
-                "name": "Dil Bechara",
-                "id": "1001"
+                "name": "Lean On"
             },
             {
-                "name": "Rhythm",
-                "id": "1002"
+                "name": "Sugar"
             },
             {
-                "name": "Jalebi",
-                "id": "10072"
+                "name": "Sorry"
+            },
+            {
+                "name": "Party In the USA"
+            }
+        ],
+        "userID": "1002"
+    },
+    {
+        "name": "New list",
+        "id": "bae7502d-6993-4285-8b1a-aae9182361bf",
+        "songs": [
+            {
+                "name": "Mirrors"
+            },
+            {
+                "name": "Hero"
             }
         ],
         "userID": "1002"
@@ -138,13 +132,62 @@
     {
         "name": "Regular",
         "id": "842fe98b-1446-48df-835e-a395f16996d1",
-        "song": [],
+        "songs": [
+            {
+                "name": "Low"
+            },
+            {
+                "name": "Hero"
+            },
+            {
+                "name": "Roar"
+            }
+        ],
+        "userID": "1002"
+    },
+    {
+        "name": "favourite",
+        "id": "81a77f11-e003-42b2-a209-dd638eebf9b6",
+        "songs": [
+            {
+                "name": "Mirrors"
+            },
+            {
+                "name": "Low"
+            }
+        ],
+        "userID": "1002"
+    },
+    {
+        "name": "Slow Songs",
+        "id": "25903b06-2cbb-45b4-8c4e-dc0febc85e45",
+        "songs": [
+            {
+                "name": "Lean On"
+            },
+            {
+                "name": "Hello"
+            }
+        ],
         "userID": "1002"
     },
     {
         "name": "Alltime",
         "id": "bf195db3-abfd-4289-a41b-7510d5ccd4a0",
-        "song": [],
+        "songs": [
+            {
+                "name": "Mirrors"
+            },
+            {
+                "name": "Hero"
+            },
+            {
+                "name": "Roar"
+            },
+            {
+                "name": "See You Again"
+            }
+        ],
         "userID": "1002"
     }
 ]

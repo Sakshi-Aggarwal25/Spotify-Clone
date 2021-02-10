@@ -1,53 +1,76 @@
-import { Component, Input, OnInit , Output} from '@angular/core';
-declare var $:any;
-
+import { Component, Input, OnInit, Output } from '@angular/core';
+declare var $: any;
+declare const move: any;
+declare const left: any;
+declare const right: any;
+declare const scrollMenu: any;
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
-  @Input() items : any[];
+  menuPosition: any;
+  menuEndOffset: number;
+  // duration of scroll animation
+  scrollDuration = 300;
+  // paddles
+  leftPaddle = document.getElementsByClassName('left-paddle');
+  rightPaddle = document.getElementsByClassName('right-paddle');
+  // get items dimensions
+  itemsLength = $('.item').length;
+  itemSize = $('.item').outerWidth(true);
+  // get some relevant size for the paddle triggering point
+  paddleMargin = 20;
+  // get wrapper width
+  getMenuWrapperSize = function () {
+    return $('.menu-wrapper').outerWidth();
+  };
+  menuWrapperSize = this.getMenuWrapperSize();
 
+  // size of the visible part of the menu is equal as the wrapper size
+  menuVisibleSize = this.menuWrapperSize;
 
+  // get total width of all menu items
+  getMenuSize = function () {
+    return this.itemsLength * this.itemSize;
+  };
+  menuSize = this.getMenuSize();
+  // get how much of menu is invisible
+  menuInvisibleSize = this.menuSize - this.menuWrapperSize;
+
+  // get how much have we scrolled to the left
+  getMenuPosition = function () {
+    return $('.menu').scrollLeft();
+  };
+
+  @Input() items: any[];
   @Input() heading: string;
-  constructor() { 
-    // this.items = [];
-    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My first song"});
-    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My sec song"});
-    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My third song"});
-    // this.items.push({imagePath:"../assets/Images/image.jpg", desc: "My fourth song"});
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    // $("app-item").click(function(){
-      // var cur = $(this);
-      // cur.animate({
-      //   opacity: '0.7',
-      //   height: '+=1px',
-      //   width: '+=1px'
-      // }, "200");
-      // cur.animate({
-      //   opacity: '1',
-      //   height: '-=1px',
-      //   width: '-=1px'
-      // },"fast");
-      // $("#one").fadeTo("slow" , 0.3);
-    // })
-
-
-    $(".min").click(function(event){
-      // event.stopPropagation();
-      event.stopImmediatePropagation()
+    $('.min').click(function (event) {
+      event.stopImmediatePropagation();
       $(event.target.parentElement.nextElementSibling).toggle();
       const x = event.target;
-      if (x.innerHTML === "^") {
-        x.innerHTML = "-";
+      if (x.innerHTML === '^') {
+        x.innerHTML = 'v';
       } else {
-        x.innerHTML = "^";
+        x.innerHTML = '^';
       }
-    })
-    
+    });
   }
 
+  onClick() {
+    move();
+  }
+  Onright() {
+    right();
+  }
+  Onleft() {
+    left();
+  }
+  scrollNow() {
+    scrollMenu();
+  }
 }

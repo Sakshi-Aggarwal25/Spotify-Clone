@@ -10,10 +10,8 @@ var cors = require("cors");
 var session = require("express-session");
 var passport = require("passport");
 
-
 // Init middleware => everytime we make a request,
 // the middleware is going to run.
-
 app.use(logger);
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -35,6 +33,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session({
   secret: 'cookie_secret',
@@ -58,15 +57,6 @@ app.use("/", require("./routes/api/users"));
 //   } else{
 //   }
 // })
-
-// app.get("/cookies", function (req, res) {
-//   // Cookies that have not been signed
-//   console.log("Cookies: ", req);
-
-//   // Cookies that have been signed
-//   console.log("Signed Cookies: ", req.signedCookies);
-//   res.send(req.cookies);
-// });
 
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname)));
 

@@ -9,7 +9,6 @@ export class UserService {
 
   constructor(public httpClient: HttpClient) { }
   getUser(user: { name: string; password: string; }): Observable<any>{
-    // return this.httpClient.get('http://localhost:3001/login', { params: { name:user.name,password:user.password }});
     return this.httpClient.get('http://localhost:3001/login', { withCredentials: true , params: { name:user.name,password:user.password }});
   }
    

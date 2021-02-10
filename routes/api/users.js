@@ -18,6 +18,8 @@ router.post("/signup", (req, res) => {
     phone: req.body.phone,
   };
 
+  console.log(newUser);
+
   if (
     !newUser.name ||
     !newUser.id ||
@@ -47,6 +49,7 @@ router.post("/signup", (req, res) => {
         .json({ msg: `User with the email ${newUser.email} already exists` });
     } else {
       users.push(newUser);
+      console.log("adding the new user in the file now");
       fs.writeFile(registeredUsers, JSON.stringify(users), (err) => {
         if (err) {
           console.log(err);
@@ -131,13 +134,13 @@ router.get("/login" , (req, res) => {
 //   res.redirect("http://localhost:3001//playlist/" + req.user.id);
 // });
 
-router.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-    failureFlash: "Invalid username or password.",
-  })
-);
+// router.post(
+//   "/login",
+//   passport.authenticate("local", {
+//     successRedirect: "/",
+//     failureRedirect: "/login",
+//     failureFlash: "Invalid username or password.",
+//   })
+// );
 
 module.exports = router;

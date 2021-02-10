@@ -11,4 +11,11 @@ export class SonglistService {
   getSongList(): Observable<any>{
     return this.httpClient.get('http://localhost:3001/search-lib');
   }
+
+  getFilteredList(searchText: string): Observable<any>{
+    return this.httpClient.get('http://localhost:3001/search-lib/searchName', { params: { find: searchText }});
+  }
+  getFilteredArtists(searchText: string): Observable<any>{
+    return this.httpClient.get('http://localhost:3001/search-lib/searchArtist', { params: { find: searchText }});
+  }
 }

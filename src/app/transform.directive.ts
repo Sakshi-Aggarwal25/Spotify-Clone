@@ -16,9 +16,6 @@ export class TransformDirective implements OnInit {
   }
 
   @HostListener('mouseleave') mouseleaver(eventData: Event){
-    this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
-    
+    this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent'); 
   }
-  
-
 }

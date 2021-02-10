@@ -6,16 +6,8 @@ declare var $:any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  ngOnInit(){
-    // $("#hide").click(function(){
-    //   $("h1").hide();
-    // });
+export class AppComponent  {
 
-    // $("#show").click(function(){
-    //   $("h1").show();
-    // });
-  }
   title = 'spotify';
   
   loadedFeature = 'home';
@@ -23,5 +15,3 @@ export class AppComponent implements OnInit {
     this.loadedFeature = feature;
   }
 }
-
-// node Server.js

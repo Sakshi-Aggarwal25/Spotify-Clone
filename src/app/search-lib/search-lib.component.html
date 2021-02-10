@@ -1,34 +1,80 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
-  <br>
-  <br>
+  <br />
+  <br />
   <div class="row">
-    <input
-      class="form-control"
-      type="text"
-      name="search"
-      [(ngModel)]="searchText"
-      autocomplete="off"
-      placeholder="Start searching for a song"
-    />
-    <br>
-    <br>
-    <br>
-    <br>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>S.No.</th>
-          <th>Song</th>
-          <th>Musician</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let song of songs | filter: searchText">
-          <td >{{ song.sno }}</td>
-          <td appTransform>{{song.name}}</td>
-          <td >{{ song.musician }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="col-3"><div class="search-container">
+      <form>
+        <input type="text" placeholder="Search.." name="search" id="findMe">
+        <button class="btnn" type="submit" (click)="searchSong()" (click)="searchArtist()" (keyup.enter)="searchArtist()"><i class="fa fa-search"></i></button>
+      </form>
+    </div></div>
+  </div>
+
+  <br />
+  <br />
+  <!-- <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Song</th>
+        <th>Artist</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let song of songs">
+        <td>{{ song.sno }}</td>
+        <td appTransform (click)="open(content, song.name)">{{ song.name }}</td>
+        <td>{{ song.musician }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <div>
+    <h3>Songs</h3>
+    <div class="row" >
+      <div class="col-2 py-3" *ngFor="let song of filteredSongs" >
+        
+        <div class="card " style="width: 10rem;" (click)="open(content, song.name)">
+          <img src="../../assets/Images/song.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">{{song.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div>
+    <br><br>
+    <h3>Artists</h3>
+    <div class="row" >
+      <div class="col-2 py-3" *ngFor="let song of filteredArtists" >
+        <div class="card" style="width: 10rem;" (click)="open(content, song.name)">
+          <img src="../../assets/Images/artist.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">{{song.musician}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Currently Chosen</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <br />
+    <h2>{{ currValue }}</h2>
+  </div>
+</ng-template>

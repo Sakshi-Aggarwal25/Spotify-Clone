@@ -1,47 +1,69 @@
 import { Component, OnInit } from '@angular/core';
 import { SonglistService } from '../songlist.service';
-// import { BrowserModule } from '@angular/platform-browser';
-// import { FormsModule } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+declare var $:any;
 
-// search module
-// import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-// declare var $:any;
 @Component({
   selector: 'app-search-lib',
   templateUrl: './search-lib.component.html',
   styleUrls: ['./search-lib.component.css']
 })
 export class SearchLibComponent implements OnInit {
-
-  constructor(public songlistService: SonglistService) { }
+  closeResult = '';
+  constructor(public songlistService: SonglistService, private modalService: NgbModal) { }
   songs = [];
+  filteredSongs = [];
+  filteredArtists = [];
   ngOnInit(): void {
     this.songlistService.getSongList().subscribe(
       response => {
         console.log("Song List", response);
         this.songs = response;
-        console.log(this.songs);
-      }, error => {
+        for(let i = 0 ; i < this.songs.length ; i++){
+          this.filteredSongs.push(this.songs[i]);
+          this.filteredArtists.push(this.songs[i]);
 
+        }
+      }, error => {
+        console.log(error);
       }
     );
   }
-  searchText;
-  // songs = [
-  //   { id: 1, name: 'See You Again', musician: 'Wiz Knalifa ft. Charlie Puth' },
-  //   { id: 2, name: 'Sorry' , musician: 'UJustin BieberSA'},
-  //   { id: 3, name: 'Uptown Funk' , musician: 'Mark Ronson ft. Bruno Mars'},
-  //   { id: 4, name: 'Hello' , musician: 'Adele' },
-  //   { id: 5, name: 'Sugar' , musician: 'Maroon 5'},
-  //   { id: 6, name: 'Lean On' , musician: 'Major Lazer'},
-  //   { id: 7, name: 'Roar' , musician: 'Katy Perry'},
-  //   { id: 8, name: 'Levitating' , musician: 'Dua Lipa'},
-  //   { id: 9, name: 'Hero' , musician: 'Enrique'},
-  //   { id: 10, name: 'Low' , musician: 'Akon'}
-  // ];
-
   
+  currValue;
+  open(content, song) {
+    console.log(song);
+    this.currValue = song;
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', centered: true, size: 'lg' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    });
+  }
+  
+  searchSong(){
+    console.log($("#findMe").val());
+    this.songlistService.getFilteredList($("#findMe").val()).subscribe(
+      response => {
+        console.log("Filtered Song List based on Song Name", response);
+        this.songs = response;
+        this.filteredSongs = response;
+        console.log(this.songs);
+      }, error => {
+        console.log(error);
+      }
+    );
+  }
+
+  searchArtist(){
+    console.log($("#findMe").val());
+    this.songlistService.getFilteredArtists($("#findMe").val()).subscribe(
+      response => {
+        console.log("Filtered Song List based on Artist name", response);
+        this.songs = response;
+        this.filteredArtists = response;
+        console.log(this.songs);
+      }, error => {
+        console.log(error);
+      }
+    );
+  }
 }
-
-

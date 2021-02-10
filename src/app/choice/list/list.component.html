@@ -1,32 +1,31 @@
-<!-- <p style="color: white; font-size: x-large">
-  Charts <button class="btn btn-light" id="min">Minimize</button>
-</p> -->
-
-<!-- <div class="row" id="myRow">
-    <div class="col-md-3">
-        <app-item id="one" class="item"></app-item>
-    </div>
-    <div class="col-md-3">
-        <app-item class="item"></app-item>
-    </div>
-    <div class="col-md-3">
-        <app-item class="item"></app-item>
-    </div>
-    <div class="col-md-3">
-        <app-item class="item"></app-item>
-    </div>
-</div> -->
-
 <p style="color: white; font-size: x-large">
     {{heading}} 
-    <button class="btn btn-light min">^</button>
+    <button class="btn btn-light min btn-sm">^</button>
 </p>
-
-<div class="row myRow" >
-  <div class="col-md-3" *ngFor="let itemData of items" >
-    <app-item 
-         [desc]="itemData.name">
-    </app-item>
+  <div class="row myRow" >
+    <div class="col" *ngFor="let itemData of items" >
+      <app-item [desc]="itemData.name" [path]="itemData.songPath"></app-item>
+    </div>
+    
   </div>
-  
+
+
+<!-- <ul class="bg myUL">
+  <div class="menu-wrapper">
+    <li *ngFor="let listData of lists" class="menu">
+      <app-list
+        [heading]="listData.name"
+        [items]="listData.songs"
+        class="Myitem"
+        (click)="onClick()"
+      >
+    </app-list>
+    <hr color="white" />
+</li>
+<div class="paddles">
+  <button class="left-paddle paddle hidden"><</button>
+  <button class="right-paddle paddle">></button>
 </div>
+
+  </div>
+</ul> -->

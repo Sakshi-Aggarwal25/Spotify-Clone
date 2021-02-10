@@ -3,7 +3,7 @@
         "name": "Mirrors",
         "id": "1001",
         "sno": "1",
-        "musician": "Justin Timberlake"
+        "musician": "Timberlake"
     },
     {
         "name": "Low",
@@ -63,6 +63,12 @@
         "name": "See You Again",
         "id": "1001",
         "sno": "11",
-        "musician": "CHarlie Puth"
+        "musician": "Charlie Puth"
+    },
+    {
+        "name": "Party In the USA",
+        "id": "1017",
+        "sno": "12",
+        "musician": "Miley Cyrus"
     }
 ]

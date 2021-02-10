@@ -1,11 +1,86 @@
 
-  .form-control {
-    box-shadow: 0 5px 5px 0 #c3d6f0;
-  }
-  .form-control::placeholder  {
-    font-family: FontAwesome;
-  }
+  /* #findMe {
+    
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+  } */
   tr{
     color: white;
   }
+  .container{
+    height: 150vh;
+  }
 
+h3{
+  color: white; 
+  font-size: xx-large
+}
+.myBtn{
+  border-radius: 50%;
+  size: large;
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  height: 50px;
+}
+
+.menu-button button {
+  width: 6%;
+  border: none;
+  /* background-color: black; */
+  color: rgb(29, 28, 28);
+  cursor: pointer;
+  text-align: left;
+  font-size: large;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.icon {
+  height: 50px;
+  width: 100%;
+}
+.menu-icon {
+  width: 45px;
+  height: 45px;
+  /* margin: 5px; */
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: #ccc;
+}
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  input[type=text],  .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}

@@ -3,9 +3,7 @@
     <h1 class="py-1 mx-auto">Signup Form</h1>
   </div>
   <form #userForm="ngForm" novalidate class="mx-auto myWidth">
-    <!-- {{userForm.value | json}}
-    <hr/>
-    {{ userModel | json}} -->
+    
     <div class="form-group mx-auto">
       <label>Name</label>
       <input
@@ -21,6 +19,7 @@
         >Name is required</small
       >
     </div>
+
     <div class="form-group mx-auto">
       <label>Email</label>
       <input
@@ -75,16 +74,21 @@
     <div class="form-group">
       <label>Confirm Password</label>
       <input
-        required
+
+      type="password"
         [class.is-invalid]="userForm.errors?.misMatch"
-        formControlName="confirmPassword"
-        type="password"
+        required
         class="form-control"
+        name="confirmPassword"
+        #confirmPassword="ngModel"
+        [(ngModel)]="userModel.confirmPassword"
         passwordValidator
+        
+        
       />
+      
       <small class="text-danger" *ngIf="userForm.errors?.misMatch"
-        >Passwords do not match</small
-      >
+        >Passwords do not match</small>
     </div>
 
     <!-- <div class="mb-3">

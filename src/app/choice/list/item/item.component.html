@@ -1,4 +1,4 @@
-<div id="div1" class="card p-0" style="width: 12rem" cdkDragLockAxis="y x" cdkDrag>
+<div id="div1" class="card p-0" style="width: 12rem" cdkDragLockAxis="y x" cdkDrag (click)="open(content)">
   <img
     src="../assets/Images/image.jpg"
     class="card-img-top"
@@ -8,8 +8,21 @@
   />
   <div class="card-body" cdkDragLockAxis="y x" cdkDrag>
     <p class="card-text">{{desc}}</p>
-    <!-- <audio controls>
-      <source src="../../assets/Audio/Soothing-Music.mp3" type="audio/mpeg" />
-    </audio> -->
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Currently Playing</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <br>
+    <h2>{{desc}}</h2>
+    <audio controls>
+      <source src={{path}} type="audio/mpeg" />
+    </audio>
+  </div>
+</ng-template>
